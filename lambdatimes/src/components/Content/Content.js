@@ -5,6 +5,7 @@ import Cards from './Cards';
 
 // Importing our tab and card data. No need to change anything here.
 import { tabData, cardData } from '../../data';
+import StyledContentContainer from './StyledComponents/StyledContentContainer';
 
 export default class Content extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ export default class Content extends Component {
 
   render() {
     return (
-      <div className="content-container">
+      <StyledContentContainer>
         {/* 
           Add 2 props to the Tabs component, 
           `selectedTab` that includes the currently selected tab
@@ -62,7 +63,7 @@ export default class Content extends Component {
         */}
         <Tabs tabs={this.state.tabs} selectedTab={this.state.selected} selectTabHandler={this.changeSelected} />
         <Cards cards={this.filterCards()} />
-      </div>
+      </StyledContentContainer>
     );
   }
 }

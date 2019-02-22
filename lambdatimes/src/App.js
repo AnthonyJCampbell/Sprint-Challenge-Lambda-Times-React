@@ -4,9 +4,11 @@ import Header from './components/Header';
 import Content from './components/Content/Content';
 import { injectGlobal } from 'styled-components';
 import styled from 'styled-components';
+
 injectGlobal`
   * {
     box-sizing: border-box;
+
   }
   @font-face {
     font-family: 'PT Sans';

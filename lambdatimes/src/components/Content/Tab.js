@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import StyledTab from './StyledComponents/StyledTab';
+
 
 const Tab = props => {
   /* Using your props, determine if the `tab` prop matches the `selectedTab` prop, 
@@ -7,13 +9,13 @@ const Tab = props => {
       if it is not it should just be 'tab'*/
       
   return (
-    <div
+    <StyledTab
       className={props.tab === props.selectedTab ? 'tab active-tab':'tab'}
       onClick={() => {props.selectTabHandler(props.tab)}}>
       {/* Replace this dummy click handler function with your selectTabHandler function from props 
        you'll need to pass the `tab` in as an argument to this handler. */}
       {props.tab.toUpperCase()}
-    </div>
+    </StyledTab>
   );
 };
 

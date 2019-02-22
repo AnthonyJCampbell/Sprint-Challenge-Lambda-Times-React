@@ -1,17 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import StyledCard from './StyledComponents/StyledCard';
+import StyledAuthor from './StyledComponents/StyledAuthor';
+
+const Headline = styled.div`
+  font-size: 25px;
+  font-family: Didot, serif;
+`;
+
 
 const Card = props => {
   return (
-    <div className="card">
-      <div className="headline">{props.card.headline}</div>
-      <div className="author">
-        <div className="img-container">
+    <StyledCard>
+      <Headline>{props.card.headline}</Headline>
+      <StyledAuthor>
+        <div>
           <img src={props.card.img} alt="He's such a good boy!"/>
         </div>
         <span>By {props.card.author}</span>
-      </div>
-    </div>
+      </StyledAuthor>
+    </StyledCard>
   );
 };
 
