@@ -36,8 +36,15 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
     Every React component has multiple phases it passes through from the moment the component is first evaluated and called, to the moment it is discarded and taken out of the flow of the website. These three phases are the 'Mount', 'Update', and 'Unmount' phases, each of which have multiple smaller steps as part of the process. We can interact with these smaller sub-steps using life-cycle-methods.
     When an app first gets rendered, a Component gets generated and 'Mounted', the first phase. Then, as soon as it's passed `render()`, we can interact with it. We can change its state, play around with its values and in general just make a mess of things - as humans are wont to do. This is all part of the 'Update' phase. Finally, when we've had enough of our poor Component we can 'unmount' a component and interact with it one last time before it goes into the ether. (With `componentWillUnmount()`)
 
-- [ ] Explain the details of a Higher Order Component?
-- [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+- [x] Explain the details of a Higher Order Component?
+    Higher Order Components (HOCs) are used when you want to have multiple Components share the same base functionality. To to do so, you'd take the HOC and pass it the component you want to have the HOCs functionality. 
+    There are hundreds of use-cases for HOCs. Examples are; adding a state to each component that tracks the amount of time a user has spent on the page, passing authentication to multiple components without having to rewrite functionality, and ensuring certain handling-methods like `onChangeHandler()` are uniform and in place wherever you need 'em.
+    In short, it mimics Higher-Order Functions. You have a functional component and pass it another component. This then adds some functionality or does something to the incoming Component and then exports it once again.
+
+- [x] What are three different ways to style components in React? Explain some of the benefits of each.
+    First off, you can use in-line styling. Just like in HTML, you can declare `style={}` in a JSX element and make it do whatever you want. Generally, this is frowned upon. It makes your JSX pretty unreadable and necessitates going through dozens of JSX files in the case of some competing styles elsewhere.
+    Secondly, you can use external stylesheets connected to every single Component. This works for the most part, but necessitates ample usage of classes and identifiers to ensure that the styling is localized to that one component, rather than inadvertedly affecting elements elsewhere.
+    Finally, you can use styled-components. This dependency enables us to declare Components that are practically a container for styling and then incorporate these directly into our React. No need for separate styling anymore. It also negates the need for using `className` and other CSS-fu. Now, we can take an element from our JSX, declare it to be a custom Component using styled-components, and then immediately enjoy the brand-new styling. 
 
 ## Project Setup
 
