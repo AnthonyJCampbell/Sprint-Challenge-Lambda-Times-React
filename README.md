@@ -28,8 +28,14 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 
 ## Self-Study/Essay Questions
 
-- [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
-- [ ] Describe a life-cycle event in React?
+- [x] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+    PropTypes is a dependency in React that allows you to check the type of incoming props. In the past, PropTypes was a native piece of the React framework, but has since become stand-alone. Using PropTypes (and it's tricky capitalization conventions), you can check if an incoming prop is a string, boolean, object, function, etc. This can serve multiple purposes: you can use it as the evaluation of a conditional, but the most common purpose is to use `.isRequired` after checking the proptype. Using this, the app will simply fail to load when the wrong type of props is passed on.
+    Checking your data in JS is key, since JavaScript will happily chugg on, if you accidentally pass the wrong type of data. This can lead to some mistakes that are hard to debug. What's more, we have to account for irrational user-behaviour like passing in numbers in an email-address input. It's just good form and makes for more robust, bug-free apps.
+
+- [x] Describe a life-cycle event in React?
+    Every React component has multiple phases it passes through from the moment the component is first evaluated and called, to the moment it is discarded and taken out of the flow of the website. These three phases are the 'Mount', 'Update', and 'Unmount' phases, each of which have multiple smaller steps as part of the process. We can interact with these smaller sub-steps using life-cycle-methods.
+    When an app first gets rendered, a Component gets generated and 'Mounted', the first phase. Then, as soon as it's passed `render()`, we can interact with it. We can change its state, play around with its values and in general just make a mess of things - as humans are wont to do. This is all part of the 'Update' phase. Finally, when we've had enough of our poor Component we can 'unmount' a component and interact with it one last time before it goes into the ether. (With `componentWillUnmount()`)
+
 - [ ] Explain the details of a Higher Order Component?
 - [ ] What are three different ways to style components in React? Explain some of the benefits of each.
 
@@ -42,9 +48,9 @@ Follow these steps to set up your project:
 - [x] Clone your OWN version of the repository (Not Lambda's by mistake!).
 - [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
-- [ ] From within the `lambdatimes` folder run `yarn` and then `yarn start`. This will open your locally hosted application in your browser. Once you are ready move onto the next steps.
-- [ ] Inside the `Content` folder you will find all 5 components that make up the content of the application. The flow goes like this: `Content > Tabs > Tab` and `Content > Cards > Card`. Follow the directions in the `Content` component to get your data ready.
+- [x] Push commits: git push origin `<firstName-lastName>`.
+- [x] From within the `lambdatimes` folder run `yarn` and then `yarn start`. This will open your locally hosted application in your browser. Once you are ready move onto the next steps.
+- [x] Inside the `Content` folder you will find all 5 components that make up the content of the application. The flow goes like this: `Content > Tabs > Tab` and `Content > Cards > Card`. Follow the directions in the `Content` component to get your data ready.
 
 Follow these steps for completing your project.
 
