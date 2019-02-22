@@ -1,19 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import StyledCard from './StyledComponents/StyledCard';
+import StyledAuthor from './StyledComponents/StyledAuthor';
+
+const Headline = styled.div`
+  font-size: 25px;
+  font-family: Didot, serif;
+`;
+
 
 const Card = props => {
   return (
-    <div className="card">
-      <div className="headline">{/* headline goes here */}</div>
-      <div className="author">
-        <div className="img-container">
-          <img src={'' /* image source goes here */} />
+    <StyledCard>
+      <Headline>{props.card.headline}</Headline>
+      <StyledAuthor>
+        <div>
+          <img src={props.card.img} alt="He's such a good boy!"/>
         </div>
-        <span>By {/* author goes here */}</span>
-      </div>
-    </div>
+        <span>By {props.card.author}</span>
+      </StyledAuthor>
+    </StyledCard>
   );
 };
 
 // Make sure to include PropTypes.
+Card.propTypes = {
+  card: PropTypes.objectOf({
+    author: PropTypes.string.isRequired,
+    headline: PropTypes.string.isRequired, 
+    img: PropTypes.string.isRequired,
+    tab: PropTypes.string.isRequired,
+  }).isRequired,
+}
 
 export default Card;
