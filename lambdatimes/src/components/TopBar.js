@@ -1,12 +1,12 @@
 import React from 'react';
-import StyledTopBar from './TopBar/StyledTopBar';
-import StyledLeft from './TopBar/StyledLeft';
-import StyledCenter from './TopBar/StyledCenter';
-import StyledRight from './TopBar/StyledRight';
+
+import StyledTopBar from './StyledTopBar/StyledTopBar';
+import StyledLeft from './StyledTopBar/StyledLeft';
+import StyledCenter from './StyledTopBar/StyledCenter';
+import StyledRight from './StyledTopBar/StyledRight';
 // Refactor this component to use styled components and not classNames. 
 // You can find the corresponding CSS in the CSS/index.css file
 
-import styled from 'styled-components';
 
 
 
