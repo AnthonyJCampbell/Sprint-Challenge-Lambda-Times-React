@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Tabs = ({ tabs, selectedTab, selectTabHandler }) => {
-  console.log(tabs);
+
   return (
     <div className="tabs">
       <div className="topics">
@@ -23,7 +23,7 @@ const Tabs = ({ tabs, selectedTab, selectTabHandler }) => {
 
 Tabs.propTypes = {
   tabs: PropTypes.array.isRequired,
-  selectedTab: PropTypes.string,
+  selectedTab: PropTypes.string.isRequired,
   selectTabHandler: PropTypes.func.isRequired,
 }
 
